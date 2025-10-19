@@ -286,4 +286,6 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 - [ROS2 Jazzy Documentation](https://docs.ros.org/en/jazzy/)
 - [Colcon Documentation](https://colcon.readthedocs.io/)
-- [YOLO Object Detection](https://github.com/ultralytics/yolov5)
+- [YOLO Object Detection](https://github.com/ultralytics/ultralytics)
+- [OpenCV Documentation](https://opencv.org/)
+- [ONNX Runtime](https://github.com/microsoft/onnxruntime)
