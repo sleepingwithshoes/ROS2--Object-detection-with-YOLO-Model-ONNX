@@ -28,6 +28,7 @@ Watch the system in action:
 
 [![Watch Detection Demo](https://github.com/user-attachments/assets/41798a52-019e-46a4-9cf5-a6583879c0e7)]
 
+<video src="https://github.com/user-attachments/assets/41798a52-019e-46a4-9cf5-a6583879c0e7" controls preload style="max-width: 730px;"></video>
 
 *Click the image above to view the detection demo video*
 
