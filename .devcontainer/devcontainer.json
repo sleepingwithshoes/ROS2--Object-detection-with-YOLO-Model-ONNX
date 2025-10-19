@@ -1,0 +1,67 @@
+{
+    "name": "ROS 2 DevContainer",
+    "build": {
+        "dockerfile": "../docker/Dockerfile",
+        "context": "..",
+        "args": {
+            "ROS_DISTRO": "jazzy",
+            "ROS_IMAGE": "desktop",
+            "USERNAME": "${localEnv:USER}",
+            "USER_UID": "1000",
+            "TARGETARCH": "${localEnv:TARGETARCH}"
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "twxs.cmake",
+                "ms-iot.vscode-ros",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "donjayamanne.python-extension-pack",
+                "kylinideteam.cmake-intellisence",
+                "redhat.vscode-xml"
+            ],
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "ros.distro": "jazzy"
+            }
+        }
+    },
+    "runArgs": [
+        "--privileged",
+        "--device=/dev/bus/usb:/dev/bus/usb",
+        "--net=host",
+        "--pid=host",
+        "--ipc=host",
+        "-e",
+        "DISPLAY=${env:DISPLAY}",
+        "-e",
+        "LIBGL_ALWAYS_SOFTWARE=1",
+        "-v",
+        "/dev/serial:/dev/serial"
+    ],
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}",
+        // The following environment restrict ROS 2 discovery to localhost and domain ID 0
+        "ROS_AUTOMATIC_DISCOVERY_RANGE": "LOCALHOST",
+        "ROS_DOMAIN_ID": "0"
+    },
+    "mounts": [
+        "source=/dev,target=/dev,type=bind",
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+        "source=${localWorkspaceFolder}/.tmp/.zsh_history,target=/home/${localEnv:USER}/.zsh_history,type=bind",
+        "source=${localEnv:HOME}/.gitconfig,target=/home/${localEnv:USER}/.gitconfig,type=bind,consistency=cached"
+    ],
+    "updateRemoteUserUID": true,
+    "remoteUser": "${localEnv:USER}",
+    "postCreateCommand": "./docker/workspace.sh",
+    "initializeCommand": "./docker/pre_running.sh"
+}

@@ -1,0 +1,22 @@
+# ROS2 Build Artefakte
+build/
+install/
+log/
+COLCON_IGNORE
+.tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/*
+!.vscode/*.json
+
+# Profiling
+*.lprof
+
+# ROS2 specific
+core
+frames*.gv
+frames*.pdf
