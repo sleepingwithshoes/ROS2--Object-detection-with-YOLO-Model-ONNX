@@ -1,5 +1,7 @@
 # C++ Object Detection with ROS2 and YOLO (ONNX)
 
+![Object Detection System](resource/image.png)
+
 A real-time object detection system built with ROS2 Jazzy and YOLO, designed for camera-based object detection and visualization.
 
 ## ✨ Key Highlights
