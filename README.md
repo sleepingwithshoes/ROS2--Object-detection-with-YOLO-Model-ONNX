@@ -26,7 +26,8 @@ This project implements a modular object detection pipeline using ROS2, featurin
 
 Watch the system in action:
 
-[![Watch Detection Demo](resource/detection.mp4)]
+[![Watch Detection Demo](https://github.com/user-attachments/assets/41798a52-019e-46a4-9cf5-a6583879c0e7)]
+
 
 *Click the image above to view the detection demo video*
 
